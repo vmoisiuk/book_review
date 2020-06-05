@@ -2,7 +2,13 @@
 <% if @books.count == 0 %>
   <h1> There no books in this category</h1>
   <% else %>
-<%= @books.each do |book|  %>
-<h2><%= link_to book.title, book %></h2>
+  <div class="row">
+
+
+<% @books.each do |book|  %>
+<div class="col-md-3">
+    <%= link_to image_tag(book.image), book_path(book), class: "book" %>
+      </div>
 <% end %>
+  </div>
 <% end %>
